@@ -9,6 +9,14 @@ import { IoSearchSharp } from "react-icons/io5";
 
 function NavBar() {
   const [nav, setNav] = useState(false);
+ const [searchTxt,setSearchTxt]=useState("");
+  const onSearch=(txt)=>{
+    setFood(
+      data.filter((item)=>{
+        return item.startsWith(txt) ;
+      })
+    )
+  }
 
   return (
     <div>
@@ -25,7 +33,7 @@ function NavBar() {
         </div>
         <div className='rounded-lg bg-gray-100 flex items-center'>
           <IoSearchSharp size={25} className='mx-1 text-gray-500' />
-          <input type='text' placeholder='search for food'
+          <input type='text' placeholder='search for food' 
             className='bg-transparent focus:outline-none p-1 text-xl px-2 text-gray-800' />
         </div>
         <BsFillCartFill size={25} className='mx-4' />

@@ -4,6 +4,37 @@ import React, { useState } from 'react'
 function Food() {
 const[food,setFood]=useState(data) ;
 
+const filterCategory=(category)=>{
+
+  if(category=="all"){
+    setFood(data);
+  }else{
+    setFood(
+      data.filter((item)=>{
+        return item.category==category;
+      })
+    )
+  }
+
+
+}
+
+const filterPrice=(price)=>{
+
+  if(price==""){
+    setFood(data);
+  }else{
+    setFood(
+      data.filter((item)=>{
+        return item.price==price;
+      })
+    )
+  }
+
+
+
+}
+
   return (
     <div className='max-w-[1640px] m-auto px-4 py-12'>
         <h1 className='text-4xl font-bold text-orange-600 flex justify-center'>Top Related Menu Items</h1>
@@ -13,21 +44,48 @@ const[food,setFood]=useState(data) ;
         <div className='py-5'>
           <h1 className=' text-gray-900 text-xl font-bold'>Filter Type</h1>
       <div className=''>
- <button className='rounded-lg px-5 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white mx-1'>All</button>
-  <button className='rounded-lg px-5 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white mx-1'>Burger</button>
- <button className='rounded-lg px-5 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white mx-1'>Pizza</button>
-  <button className='rounded-lg px-5 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white mx-1'>Salad</button>
- <button className='rounded-lg px-5 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white mx-1'>Chicken</button>
+ <button className='rounded-lg px-5 text-orange-500 border border-orange-500
+    hover:bg-orange-500 hover:text-white mx-1'
+    onClick={()=>{filterCategory('all')}}
+    >All</button>
+  <button className='rounded-lg px-5 text-orange-500 border border-orange-500
+   hover:bg-orange-500 hover:text-white mx-1'
+   onClick={()=>{filterCategory('burger')}}
+   >Burger</button>
+ <button className='rounded-lg px-5 text-orange-500 border border-orange-500
+  hover:bg-orange-500 hover:text-white mx-1'
+  onClick={()=>{filterCategory('pizza')}}
+   >Pizza</button>
+  <button className='rounded-lg px-5 text-orange-500 border
+   border-orange-500 hover:bg-orange-500 hover:text-white mx-1'
+   onClick={()=>{filterCategory('salad')}}
+   >Salad</button>
+ <button className='rounded-lg px-5 text-orange-500 border border-orange-500
+  hover:bg-orange-500 hover:text-white mx-1'
+  onClick={()=>{filterCategory('chicken')}}
+  >Chicken</button>
           </div>
         </div>
 
         <div className='py-5'>
           <h1 className=' text-gray-900 text-xl font-bold'>Filter Price</h1>
       <div className=''>
- <button className='rounded-lg px-5  text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white mx-1'>$</button>
-  <button className='rounded-lg px-5  text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white mx-1'>$$</button>
- <button className='rounded-lg px-5 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white mx-1'>$$$</button>
-  <button className='rounded-lg px-5 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white mx-1'>$$$$</button>
+ <button className='rounded-lg px-5  text-orange-500 border border-orange-500
+  hover:bg-orange-500 hover:text-white mx-1'
+  onClick={()=>{filterPrice("$")}}
+  >$</button>
+  <button className='rounded-lg px-5  text-orange-500 border
+   border-orange-500 hover:bg-orange-500 hover:text-white mx-1'
+   onClick={()=>{filterPrice("$$")}}
+   >$$</button>
+ <button className='rounded-lg px-5 text-orange-500 border
+  border-orange-500 hover:bg-orange-500 hover:text-white mx-1'
+  onClick={()=>{filterPrice("$$$")}}
+  >$$$</button>
+  <button className='rounded-lg px-5 text-orange-500 border
+   border-orange-500 hover:bg-orange-500 hover:text-white mx-1'
+   onClick={()=>{filterPrice("$$$$")}}
+   >$$$$</button>
           </div>
         </div>
  </div>
