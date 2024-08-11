@@ -21,14 +21,14 @@ function NavBar() {
   return (
     <div>
       <div className='flex items-center justify-between w-full z-50 fixed top-0 
-         h-[60px] text-gray-50 bg-orange-700 '>
+         h-[60px] text-gray-50 bg-orange-700 p-1 sm:p-5 '>
         <div className='flex items-center'>
           <AiOutlineMenu size={30} className='' onClick={() => { setNav(true) }} />
-          <h1 className=' lg:text-2xl mx-2 font-bold'>Onlay Food</h1>
-          <div className='  rounded-lg flex items-center px-4 py-1  lg:flex '>
+          <h1 className=' lg:text-2xl mx-2 font-bold hidden sm:flex '>Onlay Food</h1>
+          {/* <div className='  rounded-lg flex items-center px-4 py-1  lg:flex  hidden'>
             <p className=' rounded-s-full bg-white text-orange-700 px-2'>Delivery</p>
             <p className='px-1'>Pickup</p>
-          </div>
+          </div> */}
 
         </div>
         <div className='rounded-lg bg-gray-100 flex items-center'>

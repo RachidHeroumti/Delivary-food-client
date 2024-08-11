@@ -11,7 +11,7 @@ function App() {
     <div> 
       <NavBar/>
       <Home/>
-      <HeadLineCard/>
+    
       <Food/>
       <Categories/>
     </div>
