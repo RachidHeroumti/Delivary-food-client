@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState ,useEffect } from 'react'
 
 function CartItems() {
     const [cartList, setCartList] = useState([]);
@@ -44,14 +44,14 @@ function CartItems() {
                         <div className=' flex  flex-col sm:flex-row  items-center  sm:p-5 bg-gray-50'>
                         <img src={item.image} className='w-[100px] h-[120px]' alt='' />
                         <div className=' sm:px-5 p-1 '>
-                          <h1 className=' sm:text-3xl text-2xl font-bold '>{item.title}</h1>
+                          <h1 className=' sm:text-3xl text-2xl font-bold '>{item.name}</h1>
                           <h1 className=' text-orange-700 text-xl font-bold'>{item.price} $$</h1>
 
-                          
+
                           <div className=' space-x-1 '>
                             <span className='border text-xl font-bold px-2 cursor-pointer bg-gray-100'
                               onClick={() => decrement()}>-</span>
-                            <span className='border  text-xl font-bold px-2 bg-gray-100'>{state.count}</span>
+                            <span className='border  text-xl font-bold px-2 bg-gray-100'>1</span>
                             <span className='border  text-xl font-bold px-2 cursor-pointer bg-gray-100'
                               onClick={() => increment()}>+</span>
                           </div>
