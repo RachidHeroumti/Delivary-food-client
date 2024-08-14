@@ -6,6 +6,7 @@ import Food from './compoanent/Food';
 import Categories from './compoanent/Categories';
 import { Routes, BrowserRouter, Route } from 'react-router-dom';
 import CartItems from './compoanent/CartItems';
+import Footer from './compoanent/Footer';
 
 function App() {
   return (
@@ -17,9 +18,9 @@ function App() {
           element={
             <>
               <Home />
-              <HeadLineCard />
               <Food />
               <Categories />
+              <Footer/>
             </>
           }
         />
@@ -27,6 +28,7 @@ function App() {
           <>
           <NavBar/>
           <CartItems/>
+          <Footer/>
           </>
          }/>
       </Routes>

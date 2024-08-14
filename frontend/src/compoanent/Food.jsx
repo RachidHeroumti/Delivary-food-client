@@ -3,6 +3,8 @@ import { data } from "../data/data";
 import { FaWhatsapp } from "react-icons/fa";
 import { BsFillCartFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Food() {
   const [food, setFood] = useState(data);
@@ -10,6 +12,14 @@ function Food() {
   const [quantities, setQuantities] = useState({});
   const navigate = useNavigate();
   
+
+  const toastOptions = {
+    position: "bottom-right",
+    autoClose: 500,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "light",
+  };
   const filterCategory = (category) => {
     if (category === "all") {
       setFood(data);
@@ -49,7 +59,9 @@ function Food() {
         localStorage.setItem('cart', JSON.stringify(updatedCartItems));
         return updatedCartItems;
       });
-      notify();
+        
+      toast.success("Added succcessfuly !",toastOptions);
+    
     }
   };
 
@@ -128,6 +140,7 @@ Total: ${(product.price * q).toFixed(2)}DH`;
           </div>
         ))}
       </div>
+      <ToastContainer/>
     </div>
   )
 }

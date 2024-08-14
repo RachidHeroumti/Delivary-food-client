@@ -36,7 +36,10 @@ function NavBar() {
           <input type='text' placeholder='search for food' 
             className='bg-transparent focus:outline-none p-1 text-xl px-2 text-gray-800' />
         </div>
+        <a href='/cart'>
         <BsFillCartFill size={25} className='mx-4' />
+        </a>
+        
       </div>
       {nav ? <div className='fixed h-screen w-full z-10 bg-black/80 top-O left-0'>
       </div> : ""
